@@ -18,6 +18,14 @@ dotenv.config({
 
 
 connectDB()
+.than(()=>{
+app.listen(process.env.POET||8000 , ()=>{
+    console.log(`server is runing at port${process.env.PORT}`)
+})
+})
+.catch((error)=>{
+    console.log("mongo db connection failed ", error)
+})
 
 
 /*
